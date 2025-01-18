@@ -22,3 +22,7 @@ function getHumanChoice(toss) {
     }
 }
 console.log(getHumanChoice(toss))
+
+let humanScore = Number(0)
+let computerScore = Number(0)
+
