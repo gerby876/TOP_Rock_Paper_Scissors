@@ -14,10 +14,15 @@ getComputerChoice()
 
 let toss = prompt ('Choose Rock Paper or Scissors', 'Rock');
 
-function getHumanChoice(toss) {
-    if (toss === 'Rock') {
+function what(toss) {
+  tcase = toLowerCase(toss);
+    return tcase
+}
+
+function getHumanChoice(tcase) {
+    if (tcase === 'rock') {
         humanChoice = 'Rock'
-    } else if (toss === 'Paper') {
+    } else if (tcase === 'paper') {
         humanChoice = 'Paper'
     } else {
         humanChoice = 'Scissors'
@@ -25,7 +30,7 @@ function getHumanChoice(toss) {
     return humanChoice;
 }
 
-getHumanChoice(toss)
+getHumanChoice()
 
 let humanScore = Number(0)
 let computerScore = Number(0)
