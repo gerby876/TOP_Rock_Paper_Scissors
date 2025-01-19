@@ -59,9 +59,20 @@ function playgame() {
          console.log(humanDisplay)
          console.log(computerDisplay)
     }
-    playround()
+
+    while (humanScore < 3 && computerScore < 3) {
+        playround()
+    } 
+      if (humanScore === 3) {
+       gameover = 'You win well done.'      
+    } else {
+        gameover = 'You lost refresh to try again.'
+    }
+
+    return gameover
 }
 
 playgame()
 
+console.log(gameover)
 
