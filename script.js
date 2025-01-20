@@ -17,18 +17,18 @@ function playgame() {
          
          getComputerChoice();
              
-        //  let toss = prompt ('Choose Rock Paper or Scissors', 'Rock');
+         let toss = prompt ('Choose Rock Paper or Scissors', 'Rock');
          
-        //  function what(toss) {
-        //     tcase = toss.toString(toss).toLowerCase(toss);
-        //      return tcase
-        //  }
+         function what(toss) {
+            tcase = toss.toString(toss).toLowerCase(toss);
+             return tcase
+         }
 
-        //  what()
+         what(toss)
          
          function getHumanChoice() {
-            let toss = prompt('Choose Rock Paper or Scissors', 'Rock');
-            let tcase = toss.toLowerCase(toss);
+            // let toss = prompt('Choose Rock Paper or Scissors', 'Rock');
+            // let tcase = toss.toLowerCase(toss);
 
              if (tcase === 'rock') {
                  humanChoice = 'Rock'
