@@ -26,16 +26,17 @@ function playgame() {
                      computerScore++
                  } else { outcome = 'It is a draw try again.'}
                  return outcome
-         
          }
          
+         const score = document.createElement('div');
+         score.textContent = "Human " + humanScore + " , Computer " + computerScore + ".";
+         display.appendChild(score)
+
+
          console.log(winner(humanChoice, computerChoice))
          
          let humanDisplay = 'Human ' + humanScore
          let computerDisplay = 'Computer ' + computerScore
-         
-         console.log(humanDisplay)
-         console.log(computerDisplay)
     }
 
     // while (humanScore < 3 && computerScore < 3) {
