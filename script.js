@@ -3,7 +3,7 @@ let computerScore = Number(0)
 
 function playgame() {
     function playround() {
-        function getComputerChoice() {
+            function getComputerChoice() {
             let x = Math.floor(Math.random() * 3);
             if (x === 0) {
              computerChoice = 'Rock';
@@ -27,13 +27,13 @@ function playgame() {
                  } else { outcome = 'It is a draw try again.'}
                  return outcome
          }
-         
-         const score = document.createElement('div');
+         winner(humanChoice, computerChoice);
+
+         round.textContent = outcome;
+         display.appendChild(round);
+
          score.textContent = "Human " + humanScore + " , Computer " + computerScore + ".";
-         display.appendChild(score)
-
-
-         console.log(winner(humanChoice, computerChoice))
+         display.appendChild(score);         
          
          let humanDisplay = 'Human ' + humanScore
          let computerDisplay = 'Computer ' + computerScore
@@ -50,6 +50,8 @@ function playgame() {
 
     // return gameover
 const display = document.querySelector("#display")
+const round = document.createElement('div');
+const score = document.createElement('div');
 
 const r = document.createElement("button");
 r.textContent = "Rock";
