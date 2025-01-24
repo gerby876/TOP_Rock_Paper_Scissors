@@ -33,11 +33,43 @@ function playgame() {
          display.appendChild(round);
 
          score.textContent = "Human " + humanScore + " , Computer " + computerScore + ".";
-         display.appendChild(score);         
-         
-         let humanDisplay = 'Human ' + humanScore
-         let computerDisplay = 'Computer ' + computerScore
+         display.appendChild(score);
+
     }
+
+    function gameover (humanScore, computerScore) {
+        if (humanScore === 3) {
+            display.removeChild(r);
+            display.removeChild(p);
+            display.removeChild(s);
+            display.removeChild(round);
+            display.removeChild(score);
+
+            const win = document.createElement('h1');
+            win.textContent = "You Win!!!";
+            display.appendChild(win);
+
+            const again = document.createElement("button");
+            again.textContent = "Playagain";
+            display.appendChild(again);
+
+        } else if (computerScore === 3) {
+        display.removeChild(r);
+        display.removeChild(p);
+        display.removeChild(s);
+        display.removeChild(round);
+        display.removeChild(score);
+
+        const lose = document.createElement('h1');
+        lose.textContent = "You Lose...";
+        display.appendChild(lose);
+
+        const again = document.createElement("button");
+        again.textContent = "Playagain";
+        display.appendChild(again);
+    } else {
+        return
+    }}
 
     // while (humanScore < 3 && computerScore < 3) {
     //     playround()
@@ -56,7 +88,8 @@ const score = document.createElement('div');
 const r = document.createElement("button");
 r.textContent = "Rock";
 r.addEventListener("click", () => {
-    playround(humanChoice = "Rock")});
+    playround(humanChoice = "Rock")
+    gameover(humanScore, computerScore)});
 display.appendChild(r);
 
 const p = document.createElement("button");
@@ -70,10 +103,10 @@ s.textContent = "Scissors";
 s.addEventListener("click", () => {
     playround(humanChoice = "Scissors")});
 display.appendChild(s);
-}
 
+}
 
 playgame()
 
-// console.log(gameover)
 
+// console.log(gameover)
