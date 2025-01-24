@@ -1,7 +1,7 @@
-let humanScore = Number(0)
-let computerScore = Number(0)
-
 function playgame() {
+    let humanScore = Number(0)
+    let computerScore = Number(0)
+    
     function playround() {
             function getComputerChoice() {
             let x = Math.floor(Math.random() * 3);
@@ -52,6 +52,10 @@ function playgame() {
             const again = document.createElement("button");
             again.textContent = "Playagain";
             display.appendChild(again);
+            again.addEventListener("click", () => {
+                display.removeChild(win);
+                display.removeChild(again);
+                playgame()});
 
         } else if (computerScore === 3) {
         display.removeChild(r);
@@ -67,20 +71,15 @@ function playgame() {
         const again = document.createElement("button");
         again.textContent = "Playagain";
         display.appendChild(again);
+        again.addEventListener("click", () => {
+            display.removeChild(lose);
+            display.removeChild(again);
+            playgame()});
+
     } else {
         return
     }}
 
-    // while (humanScore < 3 && computerScore < 3) {
-    //     playround()
-    // } 
-    //   if (humanScore === 3) {
-    //    gameover = 'You win well done.'      
-    // } else {
-    //     gameover = 'You lost refresh to try again.'
-    // }
-
-    // return gameover
 const display = document.querySelector("#display")
 const round = document.createElement('div');
 const score = document.createElement('div');
@@ -88,25 +87,24 @@ const score = document.createElement('div');
 const r = document.createElement("button");
 r.textContent = "Rock";
 r.addEventListener("click", () => {
-    playround(humanChoice = "Rock")
+    playround(humanChoice = "Rock");
     gameover(humanScore, computerScore)});
 display.appendChild(r);
 
 const p = document.createElement("button");
 p.textContent = "Paper";
 p.addEventListener("click", () => {
-    playround(humanChoice = "Paper")});
+    playround(humanChoice = "Paper");
+    gameover(humanScore, computerScore)});
 display.appendChild(p);
 
 const s = document.createElement("button");
 s.textContent = "Scissors";
 s.addEventListener("click", () => {
-    playround(humanChoice = "Scissors")});
+    playround(humanChoice = "Scissors");
+    gameover(humanScore, computerScore)});
 display.appendChild(s);
 
 }
 
 playgame()
-
-
-// console.log(gameover)
