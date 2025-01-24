@@ -17,35 +17,8 @@ function playgame() {
          
          getComputerChoice();
              
-         let toss = prompt ('Choose Rock Paper or Scissors', 'Rock');
-         
-         function what(toss) {
-            tcase = toss.toString(toss).toLowerCase(toss);
-             return tcase
-         }
-
-         what(toss)
-         
-         function getHumanChoice() {
-            // let toss = prompt('Choose Rock Paper or Scissors', 'Rock');
-            // let tcase = toss.toLowerCase(toss);
-
-             if (tcase === 'rock') {
-                 humanChoice = 'Rock'
-             } else if (tcase === 'paper') {
-                 humanChoice = 'Paper'
-             } else {
-                 humanChoice = 'Scissors'
-             }
-             return humanChoice;
-         }
-         
-         getHumanChoice()
-         
-    
-         
          function winner(humanChoice, computerChoice) {
-                 if (humanChoice === 'Rock' && computerChoice === 'Scissors' || humanChoice === 'Paper' && computerChoice === 'Rock' || humanChoice === 'Scissors' && computerChoice === 'Paper') {
+                 if (humanChoice === "Rock" && computerChoice === 'Scissors' || humanChoice === 'Paper' && computerChoice === 'Rock' || humanChoice === 'Scissors' && computerChoice === 'Paper') {
                      outcome = 'You win, ' + humanChoice + ' beats ' + computerChoice + '.'
                      humanScore++
                  } else if (humanChoice === 'Rock' && computerChoice === 'Paper' || humanChoice === 'Paper' && computerChoice === 'Scissors' || humanChoice === 'Scissors' && computerChoice === 'Rock') {
@@ -65,19 +38,39 @@ function playgame() {
          console.log(computerDisplay)
     }
 
-    while (humanScore < 3 && computerScore < 3) {
-        playround()
-    } 
-      if (humanScore === 3) {
-       gameover = 'You win well done.'      
-    } else {
-        gameover = 'You lost refresh to try again.'
-    }
+    // while (humanScore < 3 && computerScore < 3) {
+    //     playround()
+    // } 
+    //   if (humanScore === 3) {
+    //    gameover = 'You win well done.'      
+    // } else {
+    //     gameover = 'You lost refresh to try again.'
+    // }
 
-    return gameover
+    // return gameover
+const display = document.querySelector("#display")
+
+const r = document.createElement("button");
+r.textContent = "Rock";
+r.addEventListener("click", () => {
+    playround(humanChoice = "Rock")});
+display.appendChild(r);
+
+const p = document.createElement("button");
+p.textContent = "Paper";
+p.addEventListener("click", () => {
+    playround(humanChoice = "Paper")});
+display.appendChild(p);
+
+const s = document.createElement("button");
+s.textContent = "Scissors";
+s.addEventListener("click", () => {
+    playround(humanChoice = "Scissors")});
+display.appendChild(s);
 }
+
 
 playgame()
 
-console.log(gameover)
+// console.log(gameover)
 
